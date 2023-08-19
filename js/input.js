@@ -165,7 +165,9 @@ export class Input {
       return;
     }
     Main.question_num = new_question_num;
-    Main.question.put_numbers(Main.question.datas[new_question_num].data);
+    Main.question.put_numbers(
+      Main.question.get_question_data(new_question_num).data
+    );
     if (Element.table.hasAttribute("data-status")) {
       Element.table.removeAttribute("data-status");
     }

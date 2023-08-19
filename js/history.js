@@ -39,7 +39,7 @@ export class History {
       return 0;
     }
     const new_question_num = max_question_num + 1;
-    if (Main.question.datas[new_question_num]) {
+    if (Main.question.get_question_data(new_question_num)) {
       return new_question_num;
     } else {
       return null;
@@ -108,7 +108,6 @@ export class History {
     this.set_status_all(null);
     this.set_status(item, "active");
     const num = Number(item.getAttribute("data-num"));
-    //const data = this.question.get_question_data(num)
     const data = this.datas[num] || {};
     console.log(data);
     Main.question.put_numbers(data.question);
