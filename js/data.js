@@ -42,7 +42,6 @@ export class Data {
     return {
       question_num: Main.question_num,
       input: Common.get_matrix_numbers(""),
-      note: Common.get_matrix_numbers("note"),
       question: Common.get_matrix_numbers("lock"),
       count:
         clear_num_data && clear_num_data.count ? clear_num_data.count++ : 1,
