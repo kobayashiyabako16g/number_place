@@ -1,14 +1,3 @@
-#NumberPlace {
-  --size-stage: 300px;
-  --color-border-1: black;
-  --color-border-2: #666;
-}
-@media (max-width: 500px) {
-  #NumberPlace {
-    --size-stage: calc(100vw - 2px);
-  }
-}
-
 html,
 body {
   width: 100%;
@@ -23,11 +12,25 @@ body {
 body {
   border: 1px solid transparent;
 }
+:root {
+  --size-stage: 300px;
+}
+
+#NumberPlace {
+  --color-border-1: black;
+  --color-border-2: #666;
+}
+@media (max-width: 500px) {
+  :root {
+    --size-stage: calc(100vw - 2px);
+  }
+}
 
 #NumberPlace,
 #NumberPlace *,
 #NumberPlace *::before,
 #NumberPlace *::after {
+  margin: 0 auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
@@ -80,4 +83,17 @@ input[type="number"] {
 
 .right {
   text-align: right;
+}
+
+.container {
+  width: calc(var(--size-stage) * 1.8);
+  margin: 0 auto;
+  @media (max-width: 500px) {
+    width: var(--size-stage);
+    maring: 0;
+  }
+}
+
+.container > h1 {
+  text-align: center;
 }

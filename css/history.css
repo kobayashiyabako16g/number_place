@@ -1,5 +1,6 @@
 #NumberPlaceHistory > * {
   cursor: pointer;
+  text-align: center;
 }
 #NumberPlaceHistory > *:hover {
   color: red;
