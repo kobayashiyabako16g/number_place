@@ -62,7 +62,9 @@ export class Common {
   }
 
   static get_cell_status(cell, type) {
-    if (type === "all" || cell.getAttribute("data-status") === type) {
+    if (type === "all" && cell.getAttribute("data-status") !== "note") {
+      return Number(cell.textContent || 0);
+    } else if (cell.getAttribute("data-status") === type) {
       return Number(cell.textContent || 0);
     } else {
       return 0;
