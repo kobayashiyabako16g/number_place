@@ -180,6 +180,7 @@ export class Input {
     if (Element.table.hasAttribute("data-status")) {
       Element.table.removeAttribute("data-status");
     }
+    Main.data.save_cache();
   }
 
   click_note_btn() {
