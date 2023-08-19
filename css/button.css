@@ -1,0 +1,66 @@
+#NumberPlace .buttons {
+  width: calc(var(--size-stage) + 2px);
+  /* height:40px; */
+  display: flex;
+  gap: 5px;
+}
+
+button#btn,
+button#NumberPlace_NewGame {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: 2px solid var(--color-border-2);
+  display: block;
+  margin: 0;
+  margin-bottom: 5px;
+  background-color: #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button#btn:hover,
+button#NumberPlace_NewGame:hover {
+  background-color: #eee;
+}
+button#btn:active,
+button#NumberPlace_NewGame:active {
+  background-color: #fee;
+  border-color: #faa;
+  color: #faa;
+}
+button#btn[data-status="start"] {
+  border-color: #88f;
+  background-color: #ddf;
+}
+button#btn[data-status="next"] {
+  border-color: #f88;
+  background-color: #fdd;
+}
+button#btn[data-status="check"] {
+  border-color: #fa8;
+  background-color: #ffd;
+}
+button#btn[data-status="start"]::before {
+  content: "Start";
+}
+
+button#btn[data-status="check"]::before {
+  content: "Check";
+}
+button#btn[data-status="next"]::before {
+  content: "Next";
+}
+
+button#btn[data-status="disabled"] {
+  pointer-events: none;
+  background-color: #bbb;
+  color: #ddd;
+}
+
+#NumberPlace:has(button#btn[data-status="start"]) button#NumberPlace_NewGame {
+  display: none;
+}
+
+#NumberPlace[data-status="history-view"] button#btn {
+  display: none;
+}

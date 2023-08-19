@@ -1,0 +1,21 @@
+#NumberPlaceHistory > * {
+  cursor: pointer;
+}
+#NumberPlaceHistory > *:hover {
+  color: red;
+}
+#NumberPlaceHistory > *[data-status="active"] {
+  font-weight: bold;
+}
+#NumberPlaceHistory > * .date {
+  font-size: 0.8em;
+}
+#NumberPlaceHistory > * .count {
+  font-size: 0.8em;
+}
+#NumberPlaceHistory > * .count::before {
+  content: "clear";
+}
+#NumberPlaceHistory > * .count::after {
+  content: "回";
+}

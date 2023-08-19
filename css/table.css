@@ -1,0 +1,50 @@
+table {
+  border-collapse: collapse;
+  user-select: none;
+}
+td {
+  padding: 0;
+  margin: 0;
+}
+
+#NumberPlace td {
+  width: calc(var(--size-stage) / 9);
+  height: calc(var(--size-stage) / 9);
+  border: 1px solid var(--color-border-2);
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  background-color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+#NumberPlace tr:nth-child(1) {
+  border-top: 2px solid #000;
+}
+#NumberPlace tr:nth-child(3n) {
+  border-bottom: 2px solid #000;
+}
+#NumberPlace td:nth-child(1) {
+  border-left: 2px solid #000;
+}
+#NumberPlace td:nth-child(3n) {
+  border-right: 2px solid #000;
+}
+#NumberPlace td[data-status="lock"] {
+  color: #66f;
+}
+#NumberPlace td[data-error="1"] {
+  background-color: #fdd;
+}
+
+#NumberPlace td[data-same-number="1"] {
+  color: red;
+}
+
+@media (hover: hover) {
+  #NumberPlace td:hover {
+    background-color: #ddd;
+  }
+}
+@media (hover: none) {
+}
