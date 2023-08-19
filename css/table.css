@@ -33,6 +33,12 @@ td {
 #NumberPlace td[data-status="lock"] {
   color: #66f;
 }
+#NumberPlace td[data-status="note"] {
+  font-size: 13px;
+  text-align: left;
+  vertical-align: text-top;
+  color: #a9a9a9;
+}
 #NumberPlace td[data-error="1"] {
   background-color: #fdd;
 }

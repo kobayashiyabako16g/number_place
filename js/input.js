@@ -39,6 +39,10 @@ export class Input {
     if (new_btn) {
       new_btn.addEventListener("click", this.click_new_btn.bind(this));
     }
+    const note_btn = Element.elm_note_button;
+    if (note_btn) {
+      note_btn.addEventListener("click", this.click_note_btn.bind(this));
+    }
 
     if (typeof window.ontouchstart !== "undefined") {
       Element.table.addEventListener("touchstart", this.touchstart.bind(this));
@@ -68,6 +72,11 @@ export class Input {
     }
     if (cell.getAttribute("data-status") === "lock") {
       return;
+    }
+    if (Main.note.get_status()) {
+      cell.setAttribute("data-status", "note");
+    } else {
+      cell.setAttribute("data-status", "");
     }
     this.data = {
       cell: cell,
@@ -170,6 +179,15 @@ export class Input {
     );
     if (Element.table.hasAttribute("data-status")) {
       Element.table.removeAttribute("data-status");
+    }
+  }
+
+  click_note_btn() {
+    Main.note.change_status();
+    if (Main.note.get_status()) {
+      Element.elm_note_button.classList.add("active");
+    } else {
+      Element.elm_note_button.classList.remove("active");
     }
   }
 }

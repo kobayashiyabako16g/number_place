@@ -13,4 +13,7 @@ export class Element {
   static get elm_new_button() {
     return document.querySelector("button#NumberPlace_NewGame");
   }
+  static get elm_note_button() {
+    return document.querySelector("button#Note");
+  }
 }

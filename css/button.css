@@ -6,7 +6,8 @@
 }
 
 button#btn,
-button#NumberPlace_NewGame {
+button#NumberPlace_NewGame,
+button#Note {
   width: 100%;
   height: 100%;
   padding: 10px;
@@ -19,7 +20,8 @@ button#NumberPlace_NewGame {
   cursor: pointer;
 }
 button#btn:hover,
-button#NumberPlace_NewGame:hover {
+button#NumberPlace_NewGame:hover,
+button#Note:hover {
   background-color: #eee;
 }
 button#btn:active,
@@ -63,4 +65,14 @@ button#btn[data-status="disabled"] {
 
 #NumberPlace[data-status="history-view"] button#btn {
   display: none;
+}
+
+button#Note.active {
+  background-color: #027ffe;
+  color: #ffff;
+  font-weight: bold;
+  border-color: #115293;
+}
+button#Note.active:hover {
+  background-color: #0059b2;
 }

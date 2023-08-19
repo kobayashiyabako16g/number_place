@@ -4,6 +4,7 @@ import { Question } from "./js/question.js";
 import { Data } from "./js/data.js";
 import { Common } from "./js/common.js";
 import { History } from "./js/history.js";
+import { Note } from "./js/note.js";
 
 export const Main = {
   stage_id: "NumberPlace",
@@ -18,6 +19,7 @@ function init() {
   Main.history = new History();
   Main.view = new View();
   Main.input = new Input();
+  Main.note = new Note();
   Main.question = new Question({
     callback: ((e) => {
       Common.continue();
