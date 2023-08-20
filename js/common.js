@@ -1,6 +1,5 @@
 import { Main } from "../main.js";
 import { Element } from "./element.js";
-import { Note } from "./note.js";
 
 export class Common {
   static get is_started() {
@@ -24,10 +23,10 @@ export class Common {
     Main.question_num = datas.question_num;
     this.start();
     this.put_number(datas.input);
-    Note.put_number(datas.note);
+    this.put_number(datas.note, "note");
   }
 
-  static put_number(datas) {
+  static put_number(datas, status = null) {
     const tr_lists = Element.tr_lists;
     if (!tr_lists || !tr_lists.length) {
       return;
@@ -38,6 +37,9 @@ export class Common {
         const num = datas[i][j];
         if (!num) {
           continue;
+        }
+        if (status != null) {
+          td_lists[j].setAttribute("data-status", status);
         }
         td_lists[j].textContent = num;
       }
