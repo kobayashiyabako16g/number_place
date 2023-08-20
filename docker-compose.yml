@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    volumes:
+      - ".:/app"
+      - "/app/node_modules"
+    working_dir: "/app"
+    command: "live-server"
+    ports:
+      - "8080:8080"
