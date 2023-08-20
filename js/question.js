@@ -1,5 +1,6 @@
 import { Main } from "../main.js";
 import { Element } from "./element.js";
+import { Common } from "./common.js";
 
 export class Question {
   constructor(options) {

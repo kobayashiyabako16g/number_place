@@ -97,6 +97,8 @@ export class History {
   set_history_value(data) {
     return `game: ${data.question_num + 1} , <span class='count'>${
       data.count || 0
+    }</span> <span class='time'>${
+      Common.msToTime(data.elapsed_time) || "--"
     }</span> <span class='date'>(${data.date || "--"})</span>`;
   }
 
@@ -114,6 +116,7 @@ export class History {
     Common.put_number(data.input);
     Main.question_num = data.question_num;
     Element.table.setAttribute("data-status", "history-view");
+    Main.time.stop();
   }
 
   set_status_all(value) {

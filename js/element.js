@@ -16,4 +16,13 @@ export class Element {
   static get elm_note_button() {
     return document.querySelector("button#Note");
   }
+  static get elm_loading_bar() {
+    return document.getElementById("loading-bar");
+  }
+  static get elm_loading_character() {
+    return document.getElementById("cat");
+  }
+  static get elm_time() {
+    return document.getElementById("time");
+  }
 }

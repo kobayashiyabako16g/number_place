@@ -20,3 +20,9 @@
 #NumberPlaceHistory > * .count::after {
   content: "回";
 }
+#NumberPlaceHistory > * .time {
+  font-size: 0.8em;
+}
+#NumberPlaceHistory > * .time::before {
+  content: "time ";
+}

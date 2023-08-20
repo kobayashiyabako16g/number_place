@@ -130,6 +130,7 @@ export class Input {
     switch (status) {
       case "check":
         Main.check = new Check();
+        if (Main.check.result) Main.time.stop();
         break;
       case "next":
         Main.question_num++;
@@ -180,6 +181,7 @@ export class Input {
     if (Element.table.hasAttribute("data-status")) {
       Element.table.removeAttribute("data-status");
     }
+    Main.time.reset();
     Main.data.save_cache();
   }
 

@@ -5,7 +5,10 @@ import { Common } from "./common.js";
 export class Check {
   constructor() {
     this.datas = Common.get_matrix_numbers("all");
-    this.judgement();
+    this._result = this.judgement();
+  }
+  get result() {
+    return this._result;
   }
 
   judgement() {
@@ -16,8 +19,10 @@ export class Check {
       this.check_error_cube()
     ) {
       this.fail();
+      return false;
     } else {
       this.correct();
+      return true;
     }
   }
 

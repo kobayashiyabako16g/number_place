@@ -11,6 +11,8 @@ export class Data {
       input: Common.get_matrix_numbers(""),
       note: Common.get_matrix_numbers("note"),
       question: Common.get_matrix_numbers("lock"),
+      time: Main.time.getTotalTime(),
+      elapsed_time: Main.time.getCurrentTime(),
     };
     const json = JSON.stringify(data);
     window.localStorage.setItem(Main.save_name, json);
@@ -46,6 +48,7 @@ export class Data {
       count:
         clear_num_data && clear_num_data.count ? clear_num_data.count++ : 1,
       date: this.get_current_datetime(),
+      elapsed_time: Main.time.getCurrentTime(),
     };
   }
 

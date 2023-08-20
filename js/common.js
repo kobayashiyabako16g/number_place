@@ -13,6 +13,8 @@ export class Common {
   static start() {
     Element.elm_button.setAttribute("data-status", "check");
     Main.question.new(Main.question_num);
+    Main.time.setting(Main.question_num, 1000);
+    Main.time.start();
   }
 
   static continue() {
@@ -24,6 +26,7 @@ export class Common {
     this.start();
     this.put_number(datas.input);
     this.put_number(datas.note, "note");
+    Main.time.continue(datas.elapsed_time);
   }
 
   static put_number(datas, status = null) {
@@ -71,5 +74,18 @@ export class Common {
     } else {
       return 0;
     }
+  }
+
+  static msToTime(duration) {
+    const hour = Math.floor(duration / 3600000);
+    const minute = Math.floor((duration - 3600000 * hour) / 60000);
+
+    const hh = ("00" + hour).slice(-2);
+    const mm = ("00" + minute).slice(-2);
+    const ms = ("00000" + (duration % 60000)).slice(-5);
+
+    const time = `${hh}:${mm}:${ms.slice(0, 2)}`;
+
+    return time;
   }
 }
