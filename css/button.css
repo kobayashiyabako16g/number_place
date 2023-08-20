@@ -68,11 +68,10 @@ button#btn[data-status="disabled"] {
 }
 
 button#Note.active {
-  background-color: #027ffe;
-  color: #ffff;
-  font-weight: bold;
+  background-color: #aed2fc;
   border-color: #115293;
 }
 button#Note.active:hover {
-  background-color: #0059b2;
+  color: #ffff;
+  background-color: #027ffe;
 }
